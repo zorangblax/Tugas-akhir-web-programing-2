@@ -41,6 +41,9 @@ class admin extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $this->news_model->save_news();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil Ditambahkan
+          </div>');
             redirect('admin');
         }
     }
@@ -49,6 +52,9 @@ class admin extends CI_Controller
     public function hapus_data($id)
     {
         $this->news_model->hapus_data($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil Dihapus
+          </div>');
         redirect('admin');
     }
 
@@ -143,6 +149,14 @@ class admin extends CI_Controller
         $this->load->view('admin/verifikasi-news', $data);
         $this->load->view('templates/footer');
     }
+    public function hapus_verify($id)
+    {
+        $this->news_model->hapus_data($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil di Hapus
+          </div>');
+        redirect('admin/verification_news');
+    }
     public function verifikasi_detail($slug)
     {
         $data['title'] = 'Verification News';
@@ -202,6 +216,9 @@ class admin extends CI_Controller
                 ];
 
                 $this->news_model->save_edit_news($id, $data); // Update data tanpa ganti image
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Berhasil di Approve
+              </div>');
                 redirect('admin/verification_news');
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -232,8 +249,39 @@ class admin extends CI_Controller
                 'image' => $upload_data['file_name'], // New file name
                 'is_active' => $this->input->post('status', true)
             ];
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil di Approve
+          </div>');
             $this->news_model->save_edit_news($id, $data);
             redirect('admin/verification_news');
         }
+    }
+    public function datauser()
+    {
+        $data['title'] = 'Data User';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['datauser'] = $this->news_model->get_user();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('templates/topbar', $data);
+        $this->load->view('admin/data-user', $data);
+        $this->load->view('templates/footer');
+    }
+    public function hapus_user($id)
+    {
+        $this->news_model->hapus_user($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                User Berhasil Dihapus
+              </div>');
+        redirect('admin/datauser');
+    }
+    public function ubahrole($id)
+    {
+        $this->news_model->ubahrole($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+        Role Telah diganti
+      </div>');
+        redirect('admin/datauser');
     }
 }

@@ -147,7 +147,10 @@ class user extends CI_Controller
             $this->load->view('user/tambah-pengajuan', $data);
             $this->load->view('templates/footer');
         } else {
-            $this->news_model->save_news();
+            $this->news_model->save_pengajuan();
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil di Tambah
+          </div>');
             redirect('user/pengajuan');
         }
     }
@@ -156,6 +159,9 @@ class user extends CI_Controller
     public function hapus_data($id)
     {
         $this->news_model->hapus_data($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil di Hapus
+          </div>');
         redirect('user/pengajuan');
     }
 
@@ -205,6 +211,9 @@ class user extends CI_Controller
                 ];
 
                 $this->news_model->save_edit_news($id, $data); // Update data tanpa ganti image
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Berhasil di Edit
+              </div>');
                 redirect('user/pengajuan');
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
@@ -235,6 +244,9 @@ class user extends CI_Controller
                 'image' => $upload_data['file_name'] // New file name
             ];
             $this->news_model->save_edit_news($id, $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+                Berhasil di Edit
+              </div>');
             redirect('user/pengajuan');
         }
     }

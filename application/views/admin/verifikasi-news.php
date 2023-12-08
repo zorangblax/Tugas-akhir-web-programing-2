@@ -6,7 +6,9 @@
 
     <div class="row">
         <div class="col">
-            <a class="btn btn-primary mb-4" href="<?= base_url('user/pengajuan_berita') ?>" role="button">Pengajuan Berita</a>
+            <div>
+                <?= $this->session->flashdata('message'); ?>
+            </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">List Berita</h6>
@@ -35,7 +37,7 @@
                                             <td><?= date("d F Y", strtotime($news_item['created'])); ?></td>
                                             <td>
                                                 <a href="<?= base_url('admin/prove/'); ?><?= $news_item['id']; ?>" class="badge badge-primary">Prove</a>
-                                                <a href="<?= base_url('user/hapus_data/'); ?><?= $news_item['id']; ?>" class="badge badge-danger">Hapus</a>
+                                                <a href="<?= base_url('admin/hapus_verify/'); ?><?= $news_item['id']; ?>" class="badge badge-danger">Hapus</a>
                                             </td>
                                         </tr>
                                 <?php

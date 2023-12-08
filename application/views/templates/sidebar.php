@@ -56,9 +56,9 @@
 
         <!-- Nav Item - user profile -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('auth/logout'); ?>">
-                <i class="fas fa-fw fa-sign-out-alt fa-sm fa-fw mr-2"></i>
-                <span>Logout</span></a>
+            <a class="nav-link" href="<?= base_url('tamu'); ?>">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Home</span></a>
         </li>
 
 

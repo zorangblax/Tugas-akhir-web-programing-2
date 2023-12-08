@@ -6,6 +6,9 @@
 
     <div class="row">
         <div class="col">
+            <div>
+                <?= $this->session->flashdata('message'); ?>
+            </div>
             <a class="btn btn-primary mb-4" href="<?= base_url('user/pengajuan_berita') ?>" role="button">Pengajuan Berita</a>
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
@@ -31,7 +34,7 @@
                                         <tr>
                                             <td><?= $no++ ?></td>
                                             <td>
-                                                <a href="<?= site_url('user/pengajuan_detail/' . $news_item['slug']); ?>"><?= $news_item['title'] ?></a>
+                                                <?= $news_item['title'] ?>
                                             </td>
                                             <td><?= $news_item['email'] ?></td>
                                             <td> <?php if ($isCurrentUser) : ?>

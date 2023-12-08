@@ -33,7 +33,7 @@ class News_model extends CI_Model
                     'image' => $gambar,
                     'slug' => url_title($title),
                     'email' => $this->input->post('email'),
-                    'is_active' => 0
+                    'is_active' => 1
 
                 ];
                 return $this->db->insert('news', $data);
@@ -45,6 +45,7 @@ class News_model extends CI_Model
             }
         }
     }
+
 
     public function hapus_data($id)
     {
@@ -107,6 +108,7 @@ class News_model extends CI_Model
                     'id_kategori' => $this->input->post('category'),
                     'body' => $this->input->post('body'),
                     'image' => $gambar,
+                    'email' => $this->input->post('email'),
                     'slug' => url_title($title),
                     'is_active' => 0
 
@@ -120,5 +122,32 @@ class News_model extends CI_Model
                 redirect('user/pengajuan_berita ');
             }
         }
+    }
+    public function get_user()
+    {
+
+        return $this->db->get('user')->result_array();
+    }
+    public function hapus_user($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+    }
+    public function ubahrole($id)
+    {
+        $user_role = $this->db->get_where('user', array('id' => $id))->row_array();
+
+        // Mengecek role_id yang diperoleh dari user
+        if ($user_role['role_id'] == 1) {
+            // Jika role_id adalah 1, update menjadi 2
+            $data = ['role_id' => 2];
+        } else {
+            // Jika role_id bukan 1 (maka diasumsikan 2), update menjadi 1
+            $data = ['role_id' => 1];
+        }
+
+        // Melakukan update berdasarkan id yang diberikan
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);
     }
 }

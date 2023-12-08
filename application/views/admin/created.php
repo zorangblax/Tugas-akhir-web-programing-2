@@ -19,6 +19,13 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="title" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" name="email" value="<?= $user['email'] ?>" autocomplete="off" readonly>
+                    <?= form_error('title', '<small class="text-danger pl-3">', '</small>'); ?>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label">Category</label>
                 <div class="col-sm-5">
                     <select class="custom-select" name="category" id="category">

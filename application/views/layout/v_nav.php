@@ -12,7 +12,6 @@
 						<nav class="main_nav_contaner ml-auto">
 							<ul class="main_nav">
 								<li class="active"><a href="<?= base_url('tamu') ?>">Home</a></li>
-								<li><a href="#">About</a></li>
 								<li><a href="<?= base_url('user') ?>">My Profile</a></li>
 								<li><a href="<?= base_url('auth/logout') ?>">Log Out</a></li>
 							</ul>
@@ -66,11 +65,9 @@
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">Home</a></li>
-				<li class="menu_mm"><a href="#">About</a></li>
-				<li class="menu_mm"><a href="#">Courses</a></li>
-				<li class="menu_mm"><a href="#">Blog</a></li>
-				<li class="menu_mm"><a href="#">Page</a></li>
+				<li class="menu_mm"><a href="<?= base_url('tamu') ?>">Home</a></li>
+				<li class="menu_mm"><a href="<?= base_url('user') ?>">My Profile</a></li>
+				<li class="menu_mm"><a href="<?= base_url('auth/logout') ?>">Log Out</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -93,10 +90,6 @@
 
 
 								</li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Berita</a></li>
-								<li><a href="#">Contact</a></li>
 							</ul>
 
 							<div class="hamburger menu_mm">
@@ -148,12 +141,7 @@
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-				<li class="menu_mm"><a href="index.html">Home</a></li>
-				<li class="menu_mm"><a href="#">About</a></li>
-				<li class="menu_mm"><a href="#">Courses</a></li>
-				<li class="menu_mm"><a href="#">Blog</a></li>
-				<li class="menu_mm"><a href="#">Page</a></li>
-				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				<li class="menu_mm"><a href="<?= base_url('tamu') ?>">Home</a></li>
 			</ul>
 		</nav>
 	</div>
