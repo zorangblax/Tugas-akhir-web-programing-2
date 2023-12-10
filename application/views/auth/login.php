@@ -34,7 +34,10 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="<?= base_url(); ?>auth/registration">Create an Account!</a>
+                                        <a class="small" href="<?= base_url(); ?>auth/registration">Buat Akun baru</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="<?= base_url(); ?>">Balik Ke Tampilan Utama</a>
                                     </div>
                                 </div>
                             </div>

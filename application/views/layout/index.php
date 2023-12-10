@@ -25,7 +25,7 @@
                     </select>
                     <input type="text" class="form-control" placeholder="Search Keyword..." name="keyword" id="keyword" autofocus>
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">search
+                        <button class="btn btn-primary" type="submit">Cari
                         </button>
                     </div>
                 </div>
@@ -45,13 +45,13 @@
                     <a href="<?= site_url('Tamu/detail/' . $news_item['slug']); ?>" class="list-group-item list-group-item-action list-group-item-info border-dark">
                         <br>
                         <div class="media">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3 d-none d-sm-block">
                                 <img src="<?= base_url('assets/img/news/') . $news_item['image']; ?>" class="img-thumbnail img-fluid">
                             </div>
                             <div class="media-body">
-                                <h5 class="mt-5 justify-center text-fluid"><?= $news_item['title'] ?></h5>
+                                <h5 class="mt-1 text-fluid"><?= $news_item['title'] ?></h5>
                             </div>
-                            <div><small><?= $tgl ?></small></div>
+                            <div><small class=""><?= $tgl ?></small></div>
                         </div>
                     </a>
                 </div>

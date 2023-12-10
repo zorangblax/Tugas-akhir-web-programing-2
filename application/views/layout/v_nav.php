@@ -5,8 +5,8 @@
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<a href="#">
-								<div class="logo_text">Portal <span>Berita</span></div>
+							<a href="<?= base_url() ?>">
+								<div class="logo_text">Fokus <span>Terkini</span></div>
 							</a>
 						</div>
 						<nav class="main_nav_contaner ml-auto">
@@ -79,8 +79,8 @@
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="logo_container">
-							<a href="#">
-								<div class="logo_text">Portal <span>Berita</span></div>
+							<a href="<?= base_url() ?>">
+								<div class="logo_text">Fokus <span>Terkini</span></div>
 							</a>
 						</div>
 						<nav class="main_nav_contaner ml-auto">
